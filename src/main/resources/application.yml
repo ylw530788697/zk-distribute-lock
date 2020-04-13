@@ -1,0 +1,19 @@
+# 基础配置文件
+server:
+  port: 8088
+
+zk:
+  url: 127.0.0.1:2181
+  localPath: /newlock
+  timeout: 3000
+
+spring:
+  curator:
+    sleep-time-ms: 3000
+    max-retries: 3
+    session-time-out-ms: 1800000
+    zookeeper-address: 127.0.0.1:2181
+    lock-node:
+      - ROOT-LOCK
+    interface-server:
+      share-node: INTER-NODE
